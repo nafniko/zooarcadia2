@@ -1,0 +1,24 @@
+{
+    "name": "pc/zoo-arcadia",
+    "autoload": {
+        "psr-4": {
+            "Pc\\ZooArcadia\\": "src/",
+             "Controllers\\": "src/Controllers/",
+             "Models\\": "src/Models/",
+             "Utils\\": "src/Utils/"
+
+        }
+    },
+    "authors": [
+        {
+            "name": "nafniko",
+            "email": "naffer@hotmail.fr"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.9",
+        "mongodb/mongodb": "^1.20",
+        "symfony/security-csrf": "^7.1",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
