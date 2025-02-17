@@ -1,0 +1,198 @@
+[{
+  "_id": {
+    "$oid": "672a5826fee5a166bf0477d2"
+  },
+  "animal_id": 1,
+  "prénom": "Giny",
+  "race": "Girafe Masai",
+  "image_path": "/asset/girafe.webp",
+  "counter": 37
+},
+{
+  "_id": {
+    "$oid": "672a5826fee5a166bf0477d3"
+  },
+  "animal_id": 2,
+  "prénom": "zaza",
+  "race": "zebre ",
+  "image_path": "/asset/zebre.webp",
+  "counter": 3
+},
+{
+  "_id": {
+    "$oid": "672a5826fee5a166bf0477d4"
+  },
+  "animal_id": 3,
+  "prénom": "eli",
+  "race": "Elephant Loxodonta africana",
+  "image_path": "/asset/elephant.webp",
+  "counter": 0
+},
+{
+  "_id": {
+    "$oid": "672a5826fee5a166bf0477d5"
+  },
+  "animal_id": 4,
+  "prénom": "leo",
+  "race": "lion de l'Atlas",
+  "image_path": "/asset/lion.jpeg",
+  "counter": 2
+},
+{
+  "_id": {
+    "$oid": "672a5826fee5a166bf0477d6"
+  },
+  "animal_id": 5,
+  "prénom": "Adi",
+  "race": "Aigle",
+  "image_path": "/asset/aigle.jpg",
+  "counter": 0
+},
+{
+  "_id": {
+    "$oid": "672a5826fee5a166bf0477d7"
+  },
+  "animal_id": 6,
+  "prénom": "Bagy",
+  "race": "Guepard",
+  "image_path": "/asset/guepard.jpeg",
+  "counter": 0
+},
+{
+  "_id": {
+    "$oid": "672a5826fee5a166bf0477d8"
+  },
+  "animal_id": 7,
+  "prénom": "Penny",
+  "race": "Panthere",
+  "image_path": "/asset/panthere.jpeg",
+  "counter": 0
+},
+{
+  "_id": {
+    "$oid": "672a5826fee5a166bf0477d9"
+  },
+  "animal_id": 8,
+  "prénom": "Doudou",
+  "race": "ours ",
+  "image_path": "/asset/ours.jpeg",
+  "counter": 0
+},
+{
+  "_id": {
+    "$oid": "672a5826fee5a166bf0477da"
+  },
+  "animal_id": 9,
+  "prénom": "Paco",
+  "race": "Perroquet ",
+  "image_path": "/asset/perroquet.jpeg",
+  "counter": 0
+},
+{
+  "_id": {
+    "$oid": "672a5826fee5a166bf0477db"
+  },
+  "animal_id": 10,
+  "prénom": "Gary",
+  "race": "Gorilles ",
+  "image_path": "/asset/gorille.jpeg",
+  "counter": 0
+},
+{
+  "_id": {
+    "$oid": "672a5826fee5a166bf0477dc"
+  },
+  "animal_id": 11,
+  "prénom": "Sily",
+  "race": "Serpent ",
+  "image_path": "/asset/anacounda.jpeg",
+  "counter": 0
+},
+{
+  "_id": {
+    "$oid": "672a5826fee5a166bf0477dd"
+  },
+  "animal_id": 12,
+  "prénom": "Papito",
+  "race": "Parresseux",
+  "image_path": "/asset/parresseux.jpg",
+  "counter": 0
+},
+{
+  "_id": {
+    "$oid": "672a5826fee5a166bf0477de"
+  },
+  "animal_id": 13,
+  "prénom": "Camille",
+  "race": "caïman noir ",
+  "image_path": "/asset/caiman.jpeg",
+  "counter": 0
+},
+{
+  "_id": {
+    "$oid": "672a5826fee5a166bf0477df"
+  },
+  "animal_id": 14,
+  "prénom": "Brutus",
+  "race": "buffle",
+  "image_path": "/asset/buffle.jpeg",
+  "counter": 0
+},
+{
+  "_id": {
+    "$oid": "672a5826fee5a166bf0477e0"
+  },
+  "animal_id": 15,
+  "prénom": "Rachelle",
+  "race": "Ragondin ",
+  "image_path": "/asset/ragondin.jpg",
+  "counter": 0
+},
+{
+  "_id": {
+    "$oid": "672a5826fee5a166bf0477e1"
+  },
+  "animal_id": 16,
+  "prénom": "Flamy",
+  "race": "Flament rose ",
+  "image_path": "/asset/flament.jpeg",
+  "counter": 0
+},
+{
+  "_id": {
+    "$oid": "672a5826fee5a166bf0477e2"
+  },
+  "animal_id": 17,
+  "prénom": "Samy",
+  "race": "Salamandre ",
+  "image_path": "/asset/salamandre.jpeg",
+  "counter": 0
+},
+{
+  "_id": {
+    "$oid": "672a5826fee5a166bf0477e3"
+  },
+  "animal_id": 18,
+  "prénom": "Rene",
+  "race": "Rainette ",
+  "image_path": "/asset/rainette.jpeg",
+  "counter": 3
+},
+{
+  "_id": {
+    "$oid": "67b330c6a0f9f39e4b076402"
+  },
+  "animal_id": null,
+  "prénom": "Guitar",
+  "image_path": "83",
+  "counter": 0
+},
+{
+  "_id": {
+    "$oid": "67b336d1a0f9f39e4b076403"
+  },
+  "animal_id": "21",
+  "prénom": null,
+  "image_path": "88",
+  "counter": 0
+}]
