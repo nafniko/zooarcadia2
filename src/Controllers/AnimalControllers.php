@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Models\Animal;
 use Models\Image;
+use Models\Stat;
 
 class AnimalControllers
 {
@@ -14,6 +15,9 @@ class AnimalControllers
         if (isset($_POST['action']) && $_POST['action']=='admin') {
             $this->admin();
         }
+     
+
+
     }
 
     public function show()
@@ -48,10 +52,7 @@ class AnimalControllers
          $contents->createAnimal($imagePath);
          
                // Redirection après traitement
-            //    var_dump($_POST);
-            //    var_dump($_FILES);
-            //    var_dump($contents);
-            //    var_dump($imagePath);
+          
             //    header("Location: /zoo/public/index.php?page=" . $pages);
                exit;
         }
@@ -90,8 +91,6 @@ class AnimalControllers
                 throw new \Exception("Unsupported request method: $method");
         }
     }
-
-
     public function index()
     {
         $this->animaux = (new Animal())->getAllObjet();

@@ -18,7 +18,7 @@
             <div class="card">
                 <div class="card-body">
 
-                    <h5 class="card-title"><?= htmlentities($rapport->getPrénom()) ?> -
+                    <h5 class="card-title"><?= htmlentities($rapport->getPrenom()) ?> -
                         <?= htmlentities($rapport->getRace()) ?></h5>
                     <p><strong>État:</strong> <?= htmlentities($rapport->getEtat()) ?></p>
                     <p><strong>Nourriture:</strong> <?= htmlentities($rapport->getNourriture()) ?></p>
@@ -105,7 +105,7 @@
                     foreach ($animauxcom as $key=>$animauxcoms) {  ?>
                     <option value="<?= htmlentities($animauxcoms["id"]) ?>"><?= htmlentities($animauxcoms["id"]) ?>
                         |
-                        <?= htmlentities($animauxcoms["prénom"] )?>
+                        <?= htmlentities($animauxcoms["prenom"] )?>
                         <?php }; ?>
                 </select>
             </div>

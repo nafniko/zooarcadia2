@@ -14,12 +14,10 @@ foreach ($this->animaux as $getAnimals) {
                 <div class="card-body">
                     <p class="card-text">Race :<br> <?= htmlentities($getAnimals->getRace()) ?></p>
                 </div>
-            
             </div>
         </div>
     </div>
     <?php
-
 }
 }
 ?>

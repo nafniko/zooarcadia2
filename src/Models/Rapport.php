@@ -41,7 +41,7 @@ class Rapport extends Models
         return $this->id;
     }
 
-    public function getPrénom()
+    public function getPrenom()
     {
         return $this->prenom;
     }
@@ -91,7 +91,7 @@ class Rapport extends Models
         $this->id = $id;
     }
 
-    public function setPrénom($prenom)
+    public function setPrenom($prenom)
     {
         $this->prenom = $prenom;
     }
@@ -140,7 +140,7 @@ class Rapport extends Models
         $this->getBdd();
         $var = [];
         $obj = 'Models\Rapport';
-        $stmt = $this->pdo->prepare("SELECT rapport.id,prénom,animaux.race,etat,nourriture,grammage,dates,commentaire FROM `rapport`join animaux on animaux.id = rapport.detail_animal");
+        $stmt = $this->pdo->prepare("SELECT rapport.id,prenom,animaux.race,etat,nourriture,grammage,dates,commentaire FROM `rapport`join animaux on animaux.id = rapport.detail_animal");
         $stmt->execute();
         while($data = $stmt->fetch(PDO::FETCH_ASSOC)){
             $var[] = new $obj($data);

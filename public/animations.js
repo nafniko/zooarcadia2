@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const details = card.querySelector('.details');
             details.classList.toggle('visually-hidden-focusable');
             const animalId = card.getAttribute('data-animal-id');
-            fetch('/lib/stats.php', {
+            
+            fetch('public/index.php?page=stat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -22,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-document.getElementById('animal').addEventListener('change', function() {
-    let selectedOption = this.options[this.selectedIndex]; // Récupérer l'option sélectionnée
-    document.getElementById('id_animal').value = selectedOption.value; // Récupérer l'ID
-    document.getElementById('prenom_animal').value = selectedOption.getAttribute('data-prenom'); // Récupérer le prénom
-});
+// document.getElementById('animal').addEventListener('change', function() {
+//     let selectedOption = this.options[this.selectedIndex]; // Récupérer l'option sélectionnée
+//     document.getElementById('id_animal').value = selectedOption.value; // Récupérer l'ID
+//     document.getElementById('prenom_animal').value = selectedOption.getAttribute('data-prenom'); // Récupérer le prénom
+// });
 

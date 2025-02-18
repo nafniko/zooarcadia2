@@ -209,7 +209,7 @@ abstract class Models
                 $this->bdd = $this->getMongodb();
                 $query = $this->bdd->animaux->insertOne([
                     'animal_id' => $id,
-                    'prénom' => $_POST['prenom'],
+                    'prenom' => $_POST['prenom'],
                     'image_path' => $imagePath ,
                     'counter' => 0,
                 ]

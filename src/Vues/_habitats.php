@@ -8,7 +8,7 @@
                 <?php foreach ($habitats as $habitat): ?>
                 <div class="col-lg-3 col-sm-12 col-md-6 mb-4">
                     <a href="/zoo/public/index.php?page=habitat&id=<?= htmlentities($habitat->getId()) ?>
-" class="d-flex container-fluid justify-content-center link-offset-2 link-underline link-underline-opacity-0 custom-img image-link">
+" class="d-flex container-fluid justify-content-center link-offset-2 link-underline link-underline-opacity-0 custom-img image-link" >
                         <div class=" text-white">
                             <img src="/zoo/public<?= htmlentities($habitat->getChemin()) ?>" class="card-img habitat-img img-fluid" alt=" du zoo">
                             <div class="d-flex align-items-end p-0">

@@ -5,6 +5,7 @@ namespace Controllers;
 use Models\Content;
 use Models\Habitat;
 use Models\Animal;
+use Models\Stat;
 
 class HabitatController
 {
@@ -12,6 +13,14 @@ class HabitatController
     private $content;
     private $animaux;
 
+    public function __construct()
+    {
+        if (isset($_POST['stat']) ) {
+            $stat = new Stat();
+            $stat->incrementCount();
+        }
+    }
+    
     public function index()
     {
         // Récupérer les habitats depuis le modèle
@@ -28,10 +37,7 @@ class HabitatController
         // Récupérer les habitats depuis le modèle
         $habitats = new Habitat();
         $habitats->getAllObjet();
-        
         require_once __DIR__ . '/../Vues/_habitats.php';
-
-
         // Inclure la vue correspondante
     }
 
@@ -43,6 +49,7 @@ class HabitatController
         $habitats = $this->habitats;
     
     $this->content = (new Content())->getAllObjet();
+    
     foreach ($this->content as $key => $contents) {
         if($contents->getLiens() == $id){
 
@@ -50,16 +57,15 @@ class HabitatController
         }
     }
     $this->animaux = (new Animal())->getAllObjet();
-    $animaux = $this->animaux;
-
-  
     
-    require __DIR__ . '/../Vues/_animaux.php';
-
-
-
-
-
+    $animaux = $this->animaux;
+            require __DIR__ . '/../Vues/_animaux.php';
+        }
     }
+    
 
-}
+
+
+
+    
+

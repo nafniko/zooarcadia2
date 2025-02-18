@@ -149,7 +149,7 @@ $routes = [
         "vue"=> "admin"
     ],
     "stat" => [
-        "controller" => "DashboardControllers",
+        "controller" => "StatControllers",
         "path"=> "/zoo/public/index.php?page=stat",
         "action" => "show",
         "vue"=> "admin"

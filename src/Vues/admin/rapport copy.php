@@ -14,7 +14,7 @@
                     foreach ($animauxcom as $key=>$animauxcoms) {  ?>
                     <option value="<?= htmlentities($animauxcoms["id"]) ?>"><?= htmlentities($animauxcoms["id"]) ?>
                         |
-                        <?= htmlentities($animauxcoms["prénom"] )?>
+                        <?= htmlentities($animauxcoms["prenom"] )?>
                         <?php } ?>
                 </select>
             </div>

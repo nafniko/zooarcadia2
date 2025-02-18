@@ -15,7 +15,7 @@ private $quantite;
 private $date_repas;
 private $employe_id;
 private $commentaire;
-private $prénom;
+private $prenom;
 
 public function __construct($data = [])
 {
@@ -116,13 +116,13 @@ public function setCommentaire($commentaire)
 }
 
 
-public function getPrénom()
+public function getPrenom()
 {
-    return $this->prénom;
+    return $this->prenom;
 }
-public function setPrénom($prénom)
+public function setPrenom($prenom)
 {
-    $this->prénom = $prénom;
+    $this->prenom = $prenom;
 }
 
 public function getAllObjet()
@@ -130,7 +130,7 @@ public function getAllObjet()
     $this->getBdd();
         $var = [];
         $obj = 'Models\Repas';
-        $stmt = $this->pdo->prepare("SELECT repas.id, animal_id, nourriture, quantite, date_repas, animaux.id as id_a, prénom FROM `repas`join animaux on animaux.id = repas.animal_id;");
+        $stmt = $this->pdo->prepare("SELECT repas.id, animal_id, nourriture, quantite, date_repas, animaux.id as id_a, prenom FROM `repas`join animaux on animaux.id = repas.animal_id;");
         $stmt->execute();
         while($data = $stmt->fetch(PDO::FETCH_ASSOC)){
             $var[] = new $obj($data);

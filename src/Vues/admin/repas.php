@@ -14,7 +14,7 @@
                             <button class="btn btn-danger  " type="submit" name="delete"
                                 value="<?= htmlentities($repasx->getId()) ?>"><strong>X</strong></button>
                         </form>
-                        <h5 class="card-title"><?= htmlentities($repasx->getPrénom()) ?> </h5>
+                        <h5 class="card-title"><?= htmlentities($repasx->getPrenom()) ?> </h5>
                         <p><strong>Nourriture:</strong> <?= htmlentities($repasx->getNourriture()) ?></p>
                         <p><strong>Quantité:</strong> <?= htmlentities($repasx->getQuantite()) ?></p>
                         <p><strong>Date du repas:</strong> <?= htmlentities($repasx->getDate_repas()) ?></p>

@@ -6,8 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?= isset($routes[$page]["meta-description"]) ? htmlentities($routes[$page]["meta-description"]) : '' ?>">
-    <link rel="stylesheet" href="/zoo/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/zoo/node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/zoo/public/scss/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

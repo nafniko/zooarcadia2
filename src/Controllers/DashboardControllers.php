@@ -9,10 +9,14 @@ use Models\Repas;
 use Models\Service;
 use Models\User;
 use Models\Rapport;
+use Models\Stat;
+
 use Utils\SessionManager;
 
 class DashboardControllers
 {
+
+ 
     public function index()
     {
         $session= new SessionManager();
@@ -37,10 +41,15 @@ class DashboardControllers
         require __DIR__ . '/../Vues/admin/dashboard.php';
 
     }
+    public function count()
+    {
+        $stat = new Stat();
+        $stat->incrementCount();
+        exit;
+    }
 
     public function show()
     {
-        
         $pages = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_SPECIAL_CHARS) ?? 'index';
         $page= ucfirst($pages);
         
