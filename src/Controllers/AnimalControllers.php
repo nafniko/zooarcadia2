@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Models\Animal;
+use Models\Habitat;
 use Models\Image;
 use Models\Stat;
 
@@ -15,14 +16,10 @@ class AnimalControllers
         if (isset($_POST['action']) && $_POST['action']=='admin') {
             $this->admin();
         }
-     
-
-
     }
 
     public function show()
     {
-        
         $pages = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_SPECIAL_CHARS) ?? 'index';
         $page= ucfirst($pages);
         
@@ -47,16 +44,14 @@ class AnimalControllers
            // Upload de l'image
            var_dump($_POST);
            $imagePath = $images->createUpload();
-           
+
            // Création de l'article avec l'image
          $contents->createAnimal($imagePath);
          
                // Redirection après traitement
-          
             //    header("Location: /zoo/public/index.php?page=" . $pages);
                exit;
         }
-
         public function updateObjet()
         {
             $content = new Animal();
@@ -94,10 +89,9 @@ class AnimalControllers
     public function index()
     {
         $this->animaux = (new Animal())->getAllObjet();
+        $habitats= new Habitat();
+        $habitats->getAllObjet();
         $animaux = $this->animaux;
-        
-        require_once __DIR__ . '/../src/Vues/_header.php';
-                 
         require_once __DIR__ . '/../Vues/_animaux.php';
      
     }

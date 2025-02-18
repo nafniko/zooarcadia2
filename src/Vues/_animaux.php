@@ -2,7 +2,6 @@
 <div class="d-flex flex-wrap justify-content-center w-75 myhover container">
 <?php
 foreach ($this->animaux as $getAnimals) {
-    if($getAnimals->getHabitat() == $id){
 
 ?>
     <div class="d-flex justify-content-center align-items-center flex-column">
@@ -18,7 +17,6 @@ foreach ($this->animaux as $getAnimals) {
         </div>
     </div>
     <?php
-}
 }
 ?>
 </div>

@@ -28,10 +28,9 @@
             </div>
         </div>
         <div class="container ">
-        
             <p class="text-white"><?= htmlentities( $contents->getDescriptions() )?></p>
             <div class="d-flex justify-content-center align-items-center">
-                <a href="/pages/habitat.php" class="lien-buttons text-center btn align-middle mb-4">Voir</a>
+                <a href="public/index.php?page=habitats" class="lien-buttons text-center btn align-middle mb-4">Voir</a>
             </div>
         </div>
     </div>

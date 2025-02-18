@@ -23,21 +23,7 @@ class DashboardControllers
         $session->start();
         $session->get('user');
 
-        $animal = new Animal();
-        $habitat = new Habitat();
-        $content = new Content();
-        $service = new Service();
-        $rapport = new Rapport();
-        $users = new User();
-        $repas = new Repas();
-        
-        $animaux = $animal->getAllObjet();
-        $contents = $content->getAllObjet();
-        $habitats = $habitat->getAllObjet();
-        $services = $service->getAllObjet();
-        $user = $users->getAllObjet();
-        $rapports = $rapport->getAllObjet();
-        $repasx = $repas->getAllObjet();
+
         require __DIR__ . '/../Vues/admin/dashboard.php';
 
     }

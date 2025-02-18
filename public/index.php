@@ -7,7 +7,7 @@ use Utils\SessionManager;
 $session= new SessionManager();
 $session->start();
 
-var_dump($_SERVER["REQUEST_METHOD"]);
+// var_dump($_SERVER["REQUEST_METHOD"]);
 $method = $_SERVER["REQUEST_METHOD"];
 $currentpage=basename($_SERVER['SCRIPT_NAME']);
 // var_dump($currentpage);
@@ -20,7 +20,7 @@ $currentpage=basename($_SERVER['SCRIPT_NAME']);
 
 $page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_SPECIAL_CHARS);
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT, ['options' => ['default' => null]]);
-var_dump($page);
+// var_dump($page);
 
 $vueHeader = $routes[$page]['vue'];
 if($session->get('user')===null && $vueHeader=='admin'){
@@ -33,8 +33,8 @@ if($session->get('user')===null && $vueHeader=='admin'){
 if (array_key_exists($page, $routes)) {
     $controllerName = "Controllers\\" . $routes[$page]['controller'];
     $actionName = $routes[$page]['action'];
-var_dump($controllerName);
-var_dump($actionName);
+// var_dump($controllerName);
+// var_dump($actionName);
     
     if($vueHeader=='admin'&& $method=='GET'){
         require_once __DIR__ . '/../src/Vues/admin/header.php';
@@ -45,7 +45,7 @@ var_dump($actionName);
     // Instancier le contrôleur et appeler l'action
     if (class_exists($controllerName) && method_exists($controllerName, $actionName)) {
         $controller = new $controllerName();
-var_dump($controller);
+// var_dump($controller);
 
         if ($id !== null) {
             $controller->$actionName($id);

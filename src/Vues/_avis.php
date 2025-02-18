@@ -3,7 +3,7 @@
     <h2 class=" text-white mt-4 col-12 ">Les Avis</h2>
     <div class=" row ">
         <div
-            class=" block-contain rounded-4 m-2 d-flex justify-content-center flex-wrap  overflow-auto col-lg-7 col-sm-12">
+            class=" block-contain rounded-4 mb-2 d-flex justify-content-center flex-wrap  overflow-auto col-lg-7 col-sm-12">
             <div class=" d-flex flex-wrap p-3 h-75 justify-content-between ">
 
                 <?php foreach($avis as $Avis){
@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <div class=" block-contain container rounded-4 m-2 h-50 col-lg-4 col-md-12 col-sm-12">
+        <div class=" block-contain container rounded-4  h-50 col-lg-4 col-md-12 col-sm-12">
 
             <form action="" method="post">
             <input type="hidden" name="csrf_token" value="<?= $csrfToken ?>">

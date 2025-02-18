@@ -5,7 +5,7 @@ use Controllers\AnimalControllers;
 $navLinks =[
     "index"=>[
        
-        "path"=> "/zoo/public/index",
+        "path"=> "/zoo/public/index?page=index",
         "title"=> "Accueil",
         "icons"=>'<i class="bi bi-house-door"></i>',
     
@@ -36,15 +36,14 @@ $routes = [
         "controller" => "ContentControllers",
         "path"=> "/zoo/public/index",
         "head_title"=> "Zoo Arcadia",
-
         "title"=> "Accueil",
         "icons"=>'<i class="bi bi-house-door"></i>',
         "current"=> "index.php",
         "action" => "index",
         "meta-description"=>"Découvrez le Zoo Arcadia, un espace écologique dédié à la préservation des espèces et à l’éducation environnementale. Visitez des habitats naturels recréés et soutenez nos initiatives de conservation durable.",
         "vue"=> "user"
-        
     ],
+
     "service" => [
         "controller" => "ServiceControllers",
         "current"=> "services.php",
@@ -88,18 +87,17 @@ $routes = [
         "vue"=> "user"
     ],
     "contact" => [
-        "controller" => "ContactController",
+        "controller" => "ContactControllers",
         "path"=> "/zoo/public/index?page=contact",
 
-        "action" => "index",
+        "action" => "show",
         "head_title"=> "Contacts : Zoo Arcadia",
         "meta-description" => "Contactez-nous pour toute information ou question concernant votre visite au Zoo Arcadia. Notre équipe est là pour vous aider et vous guider dans votre expérience.",
         "vue"=> "user"
     ],
     "animaux" => [
-        "controller" => "AnimalController",
+        "controller" => "AnimalControllers",
         "path"=> "/zoo/public/index?page=animaux",
-
         "action" => "index",
         "head_title"=> "Animaux : Zoo Arcadia",
         "meta-description" => "Découvrez nos animaux au Zoo Arcadia et apprenez-en davantage sur leur habitat naturel, leur comportement et les actions de conservation menées pour leur préservation.",

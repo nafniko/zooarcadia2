@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?= isset($routes[$page]["meta-description"]) ? htmlentities($routes[$page]["meta-description"]) : '' ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/zoo/public/scss/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,8 +57,7 @@
                             <li class="nav-item myhover"><a href="/zoo/public/index.php?page=logout" class="nav-link d-flex flex-column justify-content-center myhover align-items-center ms-5"><i class="bi bi-box-arrow-right"></i>Deconnexion</a></li>
                         <?php } else { ?>
                             <li class="nav-item myhover">
-                                <a href="/zoo/public/index.php?page=connexion
-" class="nav-link myhover d-flex flex-column justify-content-center align-items-center ms-5"><i class="bi bi-person"></i>Connexion</a></li>
+                                <a href="/zoo/public/index.php?page=connexion" class="nav-link myhover d-flex flex-column justify-content-center align-items-center ms-5"><i class="bi bi-person"></i>Connexion</a></li>
                         <?php } ?>
                     </ul>
                 </div>
@@ -65,4 +66,5 @@
     </div>
     <div class="filter-z-index"></div>
 </header>
-        <main>
+<main class="animate__animated animate__fadeIn">
+
