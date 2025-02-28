@@ -17,7 +17,7 @@
                     <textarea class="form-control" id="message" name="message" placeholder="Message !" rows="3" required></textarea>
                 </div>
                 <div class="col-auto">
-                    <button type="submit" name="submit" class="btn btn-primary mb-3">Envoyer</button>
+                    <button type="submit" id="contact" name="submit" class="btn btn-primary mb-3">Envoyer</button>
                 </div>
             </form>
         </div>

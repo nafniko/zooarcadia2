@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../src/utils/route.php';
 
 use Utils\SessionManager;
@@ -18,7 +18,7 @@ $currentpage=basename($_SERVER['SCRIPT_NAME']);
 
 // Récupérer la route demandée depuis l'URL
 
-$page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_SPECIAL_CHARS);
+$page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_SPECIAL_CHARS) ?? 'index';
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT, ['options' => ['default' => null]]);
 // var_dump($page);
 
