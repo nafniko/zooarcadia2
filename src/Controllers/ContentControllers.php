@@ -19,9 +19,7 @@ class ContentControllers
         if (isset($_POST['action']) && $_POST['action'] == 'admin') {
             $this->admin();
         }
-        if (isset($_POST['poster']) ) {
-            $this->avis();
-        }
+        
     }
 
     public function index()
@@ -50,11 +48,13 @@ class ContentControllers
         $avis = $avis->getAvis();
         require __DIR__ . '/../Vues/_avis.php';
     }
+
     public function avis()
     {
-        $avis = new Avis;
+        $avis = new Avis();
         $avis->createAvis($_POST);
-        header('location: /zoo/public/index.php?page=index');
+        header("Location: /zoo/public/index.php?page=index");
+        exit;
     }
     public function admin()
     {

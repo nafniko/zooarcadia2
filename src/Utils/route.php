@@ -1,6 +1,6 @@
 <?php
 
-use Controllers\AnimalControllers;
+
 
 $navLinks =[
     "index"=>[
@@ -155,7 +155,13 @@ $routes = [
     "avis" => [
         "controller" => "DashboardControllers",
         "path"=> "/zoo/public/index.php?page=avis",
-        "action" => "show",
+        "action" => "crud",
+        "vue"=> "admin"
+    ],
+    "poster" => [
+        "controller" => "ContentControllers",
+        "path"=> "/zoo/public/index.php?page=avis",
+        "action" => "avis",
         "vue"=> "admin"
     ],
     "services" => [

@@ -105,8 +105,7 @@ class User extends Models
     public function verifyUsers($inputEmail,$password)
     {
         $ok=$this->getEmailByEmail("users", $inputEmail,"Models\User");
-        // var_dump($ok);
-        $p=$ok->getEmail() == $inputEmail && password_verify($password, $ok->getPasswords());
+       $ok->getEmail() == $inputEmail && password_verify($password, $ok->getPasswords());
         return $ok;
     }
       
@@ -114,22 +113,33 @@ class User extends Models
         {
             return $this->getAll("users", "Models\User");
         }
-    
- 
+     
         public function createObjet()
         {
-            if (($_POST['email']) && ($_POST['Passwords']) && ($_POST['role'])) {
+            // Vérifie si les champs email, Passwords et role sont présents dans $_POST
+            if (isset($_POST['email']) && isset($_POST['Passwords']) && isset($_POST['role'])) {
+        
+                // Assainit l'email pour éviter les injections
                 $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+        
+                // Hash le mot de passe en utilisant password_hash avec PASSWORD_DEFAULT pour la sécurité
                 $password = password_hash(htmlspecialchars($_POST['Passwords'], ENT_QUOTES, 'UTF-8'), PASSWORD_DEFAULT);
+        
+                // Assainit le rôle en échappant les caractères spéciaux
                 $role = htmlspecialchars($_POST['role'], ENT_QUOTES, 'UTF-8');
-                $data=[
-                    "email"=>$email,
-                    "Passwords"=>$password,
-                    "roles"=>$role
+        
+                // Prépare un tableau associatif avec les données à insérer dans la base de données
+                $data = [
+                    "email" => $email,
+                    "Passwords" => $password,
+                    "roles" => $role
                 ];
             }
+        
+            // Appelle la méthode create pour insérer les données dans la table "users"
             return $this->create($data, "users");
         }
+        
       
 }
 ?>

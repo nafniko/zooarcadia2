@@ -2,7 +2,6 @@
 
 namespace Controllers;
 
-use Models\Animal;
 use Models\Content;
 use Models\Image;
 use Models\Stat;
@@ -45,10 +44,11 @@ class StatControllers
     }
     public function show()
     {
-        $pages = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_SPECIAL_CHARS) ?? 'index';
+        $pages = filter_input(INPUT_GET, 'page',
+         FILTER_SANITIZE_SPECIAL_CHARS) ?? 'index';
         $page= ucfirst($pages);
         
-        $className = "Models\\" . $page; // Assure-toi que la classe est bien dans le bon namespace
+        $className = "Models\\" . $page;
 
         if (!class_exists($className)) {
             die("Erreur : La classe $className n'existe pas.");
@@ -59,6 +59,7 @@ class StatControllers
 
         require_once __DIR__ . '/../Vues/admin/'. $pages.'.php';
     }
+    
     public function createObjet()
     {
         // Récupérer la page demandée

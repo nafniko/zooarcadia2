@@ -9,10 +9,10 @@
     <div class="d-flex justify-content-center block-contain container rounded-4">
         <div class="row g-0  position-relative align-items-center">
             <div class="col-md-6 mb-md-0 p-md-4 ">
-                <img src="/zoo/public<?= htmlentities( $getServices->getChemin()) ?>" class="w-100 " alt="image du zoo">
+                <img src="/zoo/public<?= htmlentities( $getServices->getChemin()) ?>" class="w-100 " alt=" du zoo">
             </div>
             <div class="col-md-6 p-4 ps-md-0">
-                <p class="text-white "><?= htmlentities( $getServices->getDescriptions()) ?></p>
+                <p class="text-white "><?= htmlentities( $getServices->getDescriptions(),ENT_QUOTES | ENT_HTML5) ?></p>
             </div>
             <div class="d-flex justify-content-center align-items-center">
                 <a href="<?= htmlentities( $getServices->getLiens() )?>"

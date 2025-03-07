@@ -56,12 +56,17 @@ class HabitatController
             require __DIR__ . '/../Vues/_habitat.php';
         }
     }
-    $this->animaux = (new Animal())->getAllObjet();
-    
-    $animaux = $this->animaux;
-            require __DIR__ . '/../Vues/_animaux.php';
+    $this->animaux = (new Animal())->getWithCom();
+    foreach ($this->animaux as $animal) {
+        if ($animal->getHabitat() == $id) {
+            $animaux[] = $animal;
         }
     }
+    if (!empty($animaux)) {
+        require __DIR__ . '/../Vues/_animaux.php';
+    }
+    }
+}
     
 
 

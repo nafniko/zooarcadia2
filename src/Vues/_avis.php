@@ -24,7 +24,7 @@
 
         <div class=" block-contain container rounded-4  h-50 col-lg-4 col-md-12 col-sm-12">
 
-            <form action="" method="post">
+            <form action="zoo/public/index.php?page=poster" method="post">
             <input type="hidden" name="csrf_token" value="<?= $csrfToken ?>">
                 <div class="mb-3">
                     <label for="pseudo" class="form-label text-white p-3">Pseudo</label>

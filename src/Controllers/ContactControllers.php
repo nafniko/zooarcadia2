@@ -7,7 +7,7 @@ class ContactControllers
     public function __construct(){
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $this->send();
-            header('Location: /zoo/public/index?page=contact');
+            // header('Location: /zoo/public/index?page=contact');
         }else{
             $this->show();
         }

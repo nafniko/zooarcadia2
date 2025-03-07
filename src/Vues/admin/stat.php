@@ -1,5 +1,5 @@
 
-<div class="row  align-items-start">
+<div class="row container align-items-start">
     <h1 class="col-12 text-white text-center m-3">Consulter les stats</h1>
     <div class="col-md-12 mb-4">
         <div class="table-responsive block-contain rounded-4 p-4">

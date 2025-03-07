@@ -5,7 +5,7 @@ namespace Models;
 use Models\Models;
 use PDO;
 
-class Animal extends Models 
+class Animal extends Models
 {
     private $id;
     private $prenom;
@@ -18,11 +18,11 @@ class Animal extends Models
     private $commentaire;
     private $obj;
 
-    
+
     public function __construct($data = [])
     {
-      
-     
+
+
         if (!empty($data)) {
             $this->hydrate($data);
         }
@@ -96,8 +96,6 @@ class Animal extends Models
     {
         $this->chemin = $chemin;
     }
-   
-   
 
     public function getCommentaire()
     {
@@ -120,13 +118,12 @@ class Animal extends Models
     }
     public function getAnimals()
     {
-
-       return $this->getAll('animaux', 'Models\Animal');
+        return $this->getAll('animaux', 'Models\Animal');
     }
 
-    public function insertAnimalMongo($imagePath,$id)
+    public function insertAnimalMongo($imagePath, $id)
     {
-        return $this->insertAnimal($imagePath,$id);
+        return $this->insertAnimal($imagePath, $id);
     }
     public function getTabAnimals()
     {
@@ -136,39 +133,48 @@ class Animal extends Models
         $stmt = $this->pdo->prepare("SELECT * FROM `animaux`join rapport on rapport.detail_animal =animaux.id;");
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($result as $key => $value) {
+        foreach ($result as  $value) {
             $var[] = new $obj($value);
         }
         return $var;
     }
     public function getAllObjet()
     {
-
-       return $this->getAllWhithImages('animaux', 'Models\Animal');
-    }
+        return $this->getAllWhithImages('animaux', 'Models\Animal');
+    }public function getWithCom()
+    {
+            $this->getBdd();
+            $var = [];
+            $stmt = $this->pdo->prepare("SELECT *FROM animaux LEFT JOIN avis_veto ON animaux.id = avis_veto.animal_id LEFT JOIN images ON animaux.images = images.id_img;");
+            $stmt->execute();
+            while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $var[] = new Animal($data);
+            }
+            $stmt->closeCursor();
+            return $var;
+            
+        }
     public function createAnimal($imagePath)
     {
-        
-        if (isset($_POST['create']) )  {
-
+        if (isset($_POST['create'])) {
             $prenom = htmlspecialchars(string: $_POST['prenom']);
             $race = htmlspecialchars($_POST['race']);
             $habitat = intval($_POST['habitat']);
-            $data=[
-                "prenom"=>$prenom,
-                "race"=>$race,
-                "habitat"=>$habitat,
-                "images"=>intval($imagePath)
+            $data = [
+                "prenom" => $prenom,
+                "race" => $race,
+                "habitat" => $habitat,
+                "images" => intval($imagePath)
             ];
-             $id=$this->create($data, "animaux");
-             $this->insertAnimalMongo($imagePath,$id);
+            $id = $this->create($data, "animaux");
+            $this->insertAnimalMongo($imagePath, $id);
             return $id;
         }
     }
     public function updateAllObjet()
     {
         $data = [];
-    
+
         if (!empty($_POST['prenom'])) {
             $data['prenom'] = htmlspecialchars($_POST['prenom']);
         }
@@ -178,19 +184,18 @@ class Animal extends Models
         if (!empty($_POST['habitat'])) {
             $data['habitat'] = htmlspecialchars($_POST['habitat']);
         }
-        $id= $_POST['id'];
-    
+        $id = $_POST['id'];
+
         if (!empty($data)) {
             return $this->update('animaux', $data, $id);
         }
-    
+
         return false; // Aucun champ à mettre à jour
     }
-    
+
     public function deleteAllObjet()
 
     {
         return $this->delete('animaux');
     }
-
 }

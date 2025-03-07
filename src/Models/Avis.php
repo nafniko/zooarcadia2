@@ -70,45 +70,33 @@ class Avis extends Models
         
     }
 
+    public function createAvis(array $data): ?string
+    {
+        $connexion = $this->getmongodb();
+        $collection = $connexion->selectCollection('avis');
 
-
-
-
-public function create(array $data,$table): int
-{
-    $connexion=$this->getmongodb();
-    $bdd = $connexion->zooarcadia;
-$collection = $bdd->avis;
-
-
-try {
-    $connexion->selectDatabase('admin')->command(['ping' => 1]);
-} catch (Exception $e) {
-    die("Erreur de connexion : " . $e->getMessage());
-}
- 
-try {
-    $connexion->selectDatabase('admin')->command(['ping' => 1]);
-} catch (Exception $e) {
-    die("Erreur de connexion : " . $e->getMessage());
-}
-
-$avis = htmlentities($data["avis"]);
-$pseudo = htmlentities($data["pseudo"]);
-
-try {
-    $avisData = [
-        'pseudo' => $pseudo,
-        'avis' => $avis,
-        'validé' => false,
-    ];
-    $result = $collection->insertOne($avisData);
-    return $result->getInsertedId();
-} catch (Exception $e) {
-    echo "Erreur lors de l'insertion : " . $e->getMessage();
-    return 0;
-}
-}
+        // Validation et assainissement des données
+        $avis = isset($data["avis"]) ? htmlentities($data["avis"]) : null;
+        $pseudo = isset($data["pseudo"]) ? htmlentities($data["pseudo"]) : null;
+    
+        if (!$avis || !$pseudo) {
+            throw new Exception("Les champs 'avis' et 'pseudo' sont requis.");
+        }
+    
+        // Insertion dans MongoDB
+        try {
+            $avisData = [
+                'pseudo' => $pseudo,
+                'avis' => $avis,
+                'validé' => false,
+            ];
+            $result = $collection->insertOne($avisData);
+            return (string) $result->getInsertedId();
+        } catch (Exception $e) {
+            throw new Exception("Erreur lors de l'insertion : " . $e->getMessage());
+        }
+    }
+    
 
 public function read()
 {

@@ -115,8 +115,6 @@ footer{
     width: 100%;
     padding: 5%;
     margin-top: auto;
-  
-    
 }
 
 .lien-buttons{
@@ -128,14 +126,12 @@ footer{
 }
 
 .imgcontents{
-
-  width: 325px;
-  height: 240px;
+  width: 100%;
+  height: 300px;
   object-fit: cover;
   box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.2);
   
 }
-
 
 .habitat-img {
   width: 100%; 
@@ -144,18 +140,29 @@ footer{
   object-fit: cover; 
   border-radius: 10%;
   }
-.myhover :hover{
- 
 
+.myhover :hover{
   transition: all 400ms cubic-bezier(.47,1.64,.41,.8);
   transform: scale(1.1);
 }
 
 .mycard{
+  width: 500px;
   border: 0px;
   background-color: $primary;
   color:white;
 }
+
+.size-card{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  z-index: 1000;
+}
+
 
 .fix{
   height: 300px;
@@ -163,7 +170,6 @@ footer{
 
 .color_dark{
   background-color:rgba(75, 64, 51, 1) ;
-
 }
 
 .bulle{
@@ -188,10 +194,10 @@ table {
   border-collapse: collapse; /* Optionnel, mais utile pour un affichage propre */
 }
 
-td {
-  white-space: nowrap; /* Empêche le texte de se mettre à la ligne */
-  width: 1px; /* Forçage pour que la cellule colle à son contenu */
-}
+// td {
+//   white-space: nowrap; /* Empêche le texte de se mettre à la ligne */
+//   width: 1px; /* Forçage pour que la cellule colle à son contenu */
+// }
 
 textarea.form-control {
   width: 100%;
@@ -200,7 +206,6 @@ textarea.form-control {
   border: none;
   outline: none;
   resize: vertical; /* Permet à l'utilisateur d'ajuster la hauteur */
-  background: transparent;
   font-size: 1rem;
   font-family: inherit;
 }

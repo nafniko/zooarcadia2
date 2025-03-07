@@ -27,8 +27,8 @@
                         <label for="role" class="form-label text-white">Rôle</label>
                         <select class="form-select" name="role" id="role" aria-label="Default select example">
                             <option selected>choisir un Rôle</option>
-                            <option value= "1" >veto</option>
-                            <option value= "2" >employer</option>
+                            <option value="1">veto</option>
+                            <option value="2">employer</option>
                         </select>
                     </div>
                     <button type="submit" value="user" name="create" class="btn btn-primary ">creer
@@ -51,11 +51,11 @@
                     </thead>
                     <tbody>
                         <?php foreach ($objetList as $value) { ?>
-                        <tr>
-                            <th class="col-1 col-md-1" scope="row"><?= htmlentities($value->getEmail()) ?></th>
-                            <td><?= htmlentities($value->getRoles()) ?></td>
-                            <td><?= htmlentities($value->getPasswords()) ?></td>
-                        </tr>
+                            <tr>
+                                <th class="col-1 col-md-1" scope="row"><?= htmlentities($value->getEmail()) ?></th>
+                                <td><?= htmlentities($value->getRoles()) ?></td>
+                                <td><?= htmlentities($value->getPasswords()) ?></td>
+                            </tr>
                         <?php } ?>
                     </tbody>
                 </table>

@@ -6,7 +6,7 @@
                 <img src="/zoo/public/<?= htmlentities($contents->getChemin()) ?>" class="img-fluid w-100" alt=" du zoo">
             </div>
             <div class="col-md-6 p-4 ps-md-0">
-                <p class="text-white"><?= htmlentities($contents->getDescriptions()) ?></p>
+                <p class="text-white"><?= $contents->getDescriptions() ?></p>
             </div>
             <div class="d-flex justify-content-center align-items-center">
                 <a href="<?= htmlentities($contents->getLiens()) ?>" class="lien-buttons <?php if (in_array($key, [0, 3, 5, 7, 11, 12, 13])) { echo "visually-hidden"; } ?> text-center btn align-middle mb-4">Voir</a>

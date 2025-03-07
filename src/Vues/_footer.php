@@ -22,6 +22,7 @@
 
     <script src="/zoo/public/js/animations.js"></script>
 <script src="/zoo/public/js/contact.js"></script>
+<script src="/zoo/public/js/avis.js"></script>
 
     
         </body>

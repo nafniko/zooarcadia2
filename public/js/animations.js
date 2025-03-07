@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.card.mycard').forEach((card) => {
         card.addEventListener('click', () => {
+            card.classList.toggle('size-card');
             const details = card.querySelector('.details');
             details.classList.toggle('visually-hidden-focusable');
             const animalId = card.getAttribute('data-animal-id');

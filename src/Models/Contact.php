@@ -17,7 +17,7 @@ if(isset($_POST["submit"]) && isset($_POST["email"]) && isset($_POST["message"])
 
     $email = htmlentities($_POST["email"]);
 
-    $sendmessage = $email .':'. htmlentities($_POST["message"]);
+    $sendmessage = $email . htmlentities($_POST["message"]);
 
     $objet = htmlentities($_POST["objet"]);
 

@@ -34,7 +34,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/zoo/public/index.php?page=user">
-                            <i class="bi-table bi pe-none me-2"></i> Créer un utilisateur
+                            <i class="bi-table bi pe-none me-2"></i> utilisateur
                         </a>
                     </li>
                     <li class="nav-item">
@@ -81,4 +81,4 @@
             </div>
         </div>
     </nav>
-    <main class="  flex-grow-1 d-flex flex-wrap justify-content-center gap-2 align-items-center px-4 ">
+    <main class="  flex-grow-1 d-flex flex-wrap justify-content-center gap-2 align-items-start px-4 ">
