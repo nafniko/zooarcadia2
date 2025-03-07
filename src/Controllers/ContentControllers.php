@@ -16,8 +16,11 @@ class ContentControllers
 
     public function __construct()
     {
-        if (isset($_POST['action']) && $_POST['action']=='admin') {
+        if (isset($_POST['action']) && $_POST['action'] == 'admin') {
             $this->admin();
+        }
+        if (isset($_POST['poster']) ) {
+            $this->avis();
         }
     }
 
@@ -25,30 +28,34 @@ class ContentControllers
     {
         $this->content = (new Content())->getAllObjet();
         foreach ($this->content as $key => $contents) {
-            if($contents->getCategorie() == 'accueil'){
+            if ($contents->getCategorie() == 'accueil') {
                 require __DIR__ . '/../Vues/_content.php';
             }
         }
-        $this->img =new Image;
+        $this->img = new Image;
         $this->img = $this->img->getImageAll();
         $img = $this->img;
         foreach ($this->img as $key => $imgs) {
-            if($imgs->getInfos() == 'caroussel' ){
-              $imgd[]= $imgs;
+            if ($imgs->getInfos() == 'caroussel') {
+                $imgd[] = $imgs;
             }
         }
-        
+
         foreach ($this->content as $key => $contents) {
-            if($contents->getCategorie() == 'a' ){
+            if ($contents->getCategorie() == 'a') {
                 require __DIR__ . '/../Vues/_caroussel.php';
-                
             }
         }
-        $avis= new Avis;
-        $avis= $avis->getAvis();
+        $avis = new Avis;
+        $avis = $avis->getAvis();
         require __DIR__ . '/../Vues/_avis.php';
-       
-}
+    }
+    public function avis()
+    {
+        $avis = new Avis;
+        $avis->createAvis($_POST);
+        header('location: /zoo/public/index.php?page=index');
+    }
     public function admin()
     {
         $method = $_SERVER["REQUEST_METHOD"];
@@ -59,7 +66,7 @@ class ContentControllers
                 $this->show();
                 break;
             case 'POST':
-                if (isset($_POST['create']) ) {
+                if (isset($_POST['create'])) {
                     $this->createObjet();
                 } elseif (isset($_POST['update']) && !empty($_POST['update'])) {
                     $this->updateObjet();
@@ -78,41 +85,38 @@ class ContentControllers
         $service = new Service();
         $contents = $content->getAllObjet();
         $services = $service->getAllObjet();
-        
-        require __DIR__ . '/../Vues/admin/content.php';
 
+        require __DIR__ . '/../Vues/admin/content.php';
     }
     public function createObjet()
     {
         // Récupérer la page demandée
-        $pages = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_SPECIAL_CHARS) ;
+        $pages = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_SPECIAL_CHARS);
         $images = new Image();
         $contents = new Content();
-    
+
         // Upload de l'image
         $imagePath = $images->createUpload();
-        
+
         // Création de l'article avec l'image
         $contents->createAllObjet($imagePath);
 
-            // Redirection après traitement
-            // var_dump($_POST);
-            header("Location: /zoo/public/index.php?page=" . $pages);
-            exit;
+        // Redirection après traitement
+        // var_dump($_POST);
+        header("Location: /zoo/public/index.php?page=" . $pages);
+        exit;
     }
-    
+
     public function updateObjet()
     {
         $content = new Content();
         return $content->updateAllObjet();
     }
-     public function deleteObjet()
+    public function deleteObjet()
     {
         $pages = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_SPECIAL_CHARS) ?? 'index';
         $contents = new Content();
         $contents->deleteAllObjet();
         header("location: /zoo/public/index.php?page=" . $pages);
     }
-
-
 }
