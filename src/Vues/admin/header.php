@@ -18,7 +18,7 @@
 <body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg navbar-dark color_dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/admin/index.php">
+            <a class="navbar-brand" href="zoo/public/index.php?page=dashboard">
                 <i class="bi bi-speedometer2 pe-none me-2"></i> Dashboard
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"

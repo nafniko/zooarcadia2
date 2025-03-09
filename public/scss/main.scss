@@ -54,7 +54,6 @@ h1, h2{
     object-fit: cover ;
     
 }
-
 .wrapper-header {
     position: relative;
   }
@@ -76,6 +75,16 @@ h1, h2{
     top: 65%;
     height: auto;
   }
+
+  a{
+   list-style: none;
+   text-decoration: none;
+    color: white;
+  }
+   a:hover{
+    color: $secondary !important;
+  }
+ 
 nav a{
   color: white !important;
 }
@@ -108,7 +117,6 @@ nav a:hover{
         background-color: #6b8e23; 
         box-shadow: 0px 0px 5px 7px rgba(0, 0, 0, 0.1);
 } 
-
 
 footer{
     background-color:rgba(75, 64, 51, 1) ;
@@ -163,7 +171,6 @@ footer{
   z-index: 1000;
 }
 
-
 .fix{
   height: 300px;
 }
@@ -183,15 +190,15 @@ footer{
 
 @media (max-width: 768px) {
   .table-responsive {
-      overflow-x: auto; /* Active le scroll horizontal */
+      overflow-x: auto; 
       display: block;
-      white-space: nowrap; /* Empêche le texte de sauter à la ligne */
+      white-space: nowrap; 
   }
 }
 
 table {
-  width: auto; /* Empêche le tableau de prendre toute la largeur */
-  border-collapse: collapse; /* Optionnel, mais utile pour un affichage propre */
+  width: auto; 
+  border-collapse: collapse; 
 }
 
 // td {
@@ -201,13 +208,22 @@ table {
 
 textarea.form-control {
   width: 100%;
-  min-height: 100px; /* Hauteur minimale */
+  min-height: 100px; 
   height: auto;
   border: none;
   outline: none;
-  resize: vertical; /* Permet à l'utilisateur d'ajuster la hauteur */
+  resize: vertical; 
   font-size: 1rem;
   font-family: inherit;
+}
+.dashbox{
+  width: 200px;
+  height: 200px;
+}
+
+.img-dashboard{
+  width: 100%;
+  height: 100%;
 }
 
 

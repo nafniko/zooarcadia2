@@ -15,8 +15,8 @@ $currentpage = basename($_SERVER['SCRIPT_NAME']);
 $page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_SPECIAL_CHARS) ?? 'index';
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT, ['options' => ['default' => null]]);
 
-$vueHeader = $routes[$page]['vue'];
-if ($session->get('user') === null && $vueHeader == 'admin') {
+$vueHeader = $routes[$page]['vue']?? 'user';
+if ($session->get('user') === null && $vueHeader == 'admin'||$vueHeader == 'logout') {
     header("location: /zoo/public/index.php?page=connexion");
 }
 
@@ -25,9 +25,6 @@ if ($session->get('user') === null && $vueHeader == 'admin') {
 if (array_key_exists($page, $routes)) {
     $controllerName = "Controllers\\" . $routes[$page]['controller'];
     $actionName = $routes[$page]['action'];
-   
-   
-
 
     if ($vueHeader == 'admin' && $method == 'GET') {
         require_once __DIR__ . '/../src/Vues/admin/header.php';
@@ -42,6 +39,7 @@ if (array_key_exists($page, $routes)) {
     // var_dump($method);
     // var_dump($controllerName);
     // var_dump($actionName);
+    // var_dump($routes[$page]['js']);
 
 
     // Instancier le contrôleur et appeler l'action
@@ -60,6 +58,7 @@ if (array_key_exists($page, $routes)) {
     }
 } else {
     // Route inconnue
+    require_once __DIR__ . '/../src/Vues/_header.php';
     require_once __DIR__ . '/../src/Vues/404.php';
 }
 if ($vueHeader == 'admin' && $method == 'GET') {

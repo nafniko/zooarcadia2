@@ -18,18 +18,21 @@ class AuthController
         $session->start();
 
         if (isset($_POST["connexion"])) {
-            $email = $_POST['email'];
-            $password = $_POST['Passwords'];
+            $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+            $password = filter_input(INPUT_POST, 'password', FILTER_DEFAULT);
 
             $userModel = new User();
 
-            // var_dump($userModel);
 
             $isValidUser = $userModel->verifyUsers($email, $password);
 
             if ($isValidUser) {
+                $userModel=new User();
+                $roles=$userModel->findEmail($email);
+                $role=$roles->getRoles();
                 // session_regenerate_id(true);
                 $session->set('user', $email);
+               $session->set('roles', $role);
 
                 header("location: /zoo/public/index.php?page=dashboard");
             } else {

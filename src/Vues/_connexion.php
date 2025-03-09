@@ -4,13 +4,7 @@
     <form action="/zoo/public/index.php?page=connexion
 " method="post" class=" p-4 mb-4 ">
         <input type="hidden" name="csrf_token" value="<?= $csrfToken ?>">
-
-
         <?php
-
-
-
-
 ?>
         <div class="row mb-4 ">
             <label for="email" class="col-sm-2 col-form-label text-white ">Email</label>

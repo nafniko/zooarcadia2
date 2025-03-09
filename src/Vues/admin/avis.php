@@ -21,11 +21,11 @@
                     <form method="post">
 
                         <button type="submit" name="valider" value=<?= htmlentities($Avis['_id'])?>
-                            class="btn btn-primary col-3 m-1">valider</button>
+                            class="btn btn-primary col-4 m-1">valider</button>
                     </form>
                     <form method="post">
                         <button type="submit" name="sup_avis" value="<?=htmlentities($Avis['_id'] )?>"
-                            class="btn btn-danger col-3 m-1">supprimer</button>
+                            class="btn btn-danger col-4 m-1">supprimer</button>
                     </form>
                 </div>
             </div>

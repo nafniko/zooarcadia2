@@ -41,7 +41,9 @@ $routes = [
         "current"=> "index.php",
         "action" => "index",
         "meta-description"=>"Découvrez le Zoo Arcadia, un espace écologique dédié à la préservation des espèces et à l’éducation environnementale. Visitez des habitats naturels recréés et soutenez nos initiatives de conservation durable.",
-        "vue"=> "user"
+        "vue"=> "user",
+        "js"=> "avis.js",
+
     ],
 
     "service" => [
@@ -93,7 +95,8 @@ $routes = [
         "action" => "show",
         "head_title"=> "Contacts : Zoo Arcadia",
         "meta-description" => "Contactez-nous pour toute information ou question concernant votre visite au Zoo Arcadia. Notre équipe est là pour vous aider et vous guider dans votre expérience.",
-        "vue"=> "user"
+        "vue"=> "user",
+        "js"=> "contact.js"
     ],
     "animaux" => [
         "controller" => "AnimalControllers",
@@ -115,12 +118,14 @@ $routes = [
         "head_title"=> "connexion : Zoo Arcadia",
         "meta-description" => "Connectez-vous à votre compte sur le site du Zoo Arcadia pour accéder à des services exclusifs, gérer vos réservations, ou consulter vos informations personnelles.",
         "vue"=> "user"
+        
     ],
     "dashboard" => [
         "controller" => "DashboardControllers",
         "path"=> "/zoo/public/index.php?page=dashboard",
         "action" => "index",
-        "vue"=> "admin"
+        "vue"=> "admin",
+        
     ],
     "user" => [
         "controller" => "DashboardControllers",
@@ -144,7 +149,8 @@ $routes = [
         "controller" => "AnimalControllers",
         "path"=> "/zoo/public/index.php?page=animal",
         "action" => "admin",
-        "vue"=> "admin"
+        "vue"=> "admin",
+        "js"=> "animaux.js"
     ],
     "stat" => [
         "controller" => "StatControllers",
@@ -168,7 +174,9 @@ $routes = [
         "controller" => "ServiceControllers",
         "action" => "admin",
         "path"=> "/zoo/public/index?page=service",
-        "vue"=> "admin"
+        "vue"=> "admin",
+        "js"=> "modifier.js"
+
     ],
     "content" => [
         "controller" => "ContentControllers",
@@ -180,7 +188,7 @@ $routes = [
         "controller" => "AuthController",
         "path"=> "/zoo/public/index.php?page=logout",
         "action" => "logout",
-        "vue"=> "admin"
+        "vue"=> "logout"
     ],
 ];
 

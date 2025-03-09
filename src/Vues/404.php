@@ -1,1 +1,1 @@
-<h1 class="">erreur de page </h1>
+<h1 class="text-white">erreur de page </h1>

@@ -102,6 +102,11 @@ class User extends Models
         return $error; // Retourne l'erreur ou null s'il n'y a pas d'erreurs
     }
 
+    public function findEmail($email )
+    {
+        return $this->getEmailByEmail("users", $email,"Models\User");
+    }
+
     public function verifyUsers($inputEmail,$password)
     {
         $ok=$this->getEmailByEmail("users", $inputEmail,"Models\User");
@@ -139,6 +144,7 @@ class User extends Models
             // Appelle la méthode create pour insérer les données dans la table "users"
             return $this->create($data, "users");
         }
+
         
       
 }

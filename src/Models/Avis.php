@@ -76,8 +76,8 @@ class Avis extends Models
         $collection = $connexion->selectCollection('avis');
 
         // Validation et assainissement des données
-        $avis = isset($data["avis"]) ? htmlentities($data["avis"]) : null;
-        $pseudo = isset($data["pseudo"]) ? htmlentities($data["pseudo"]) : null;
+        $avis = ucfirst(isset($data["avis"]) ? htmlentities($data["avis"]) : null);
+        $pseudo = ucfirst(isset($data["pseudo"]) ? htmlentities($data["pseudo"]) : null);
     
         if (!$avis || !$pseudo) {
             throw new Exception("Les champs 'avis' et 'pseudo' sont requis.");
@@ -112,16 +112,11 @@ public function read()
     }
 }
 
-public function update($table, array $data, int $id)
+public function updateAvis()
 {
     $connexion=$this->getmongodb();
-    $bdd = $connexion->zooarcadia;
-    $collection = $bdd->avis;
-try {
-    $connexion->selectDatabase('admin')->command(['ping' => 1]);
-} catch (Exception $e) {
-    die("Erreur de connexion : " . $e->getMessage());
-}
+    $collection = $connexion->selectCollection('avis');
+
     if (isset($_POST['valider'])) {
         try {
 
@@ -131,7 +126,8 @@ try {
                 ['$set' => ['validé' => true]]
             );
             echo "Avis validé avec succès.";
-            header("Location: /admin/pages/avis.php");
+            header("Location:/zoo/public/index.php?page=avis");
+
             exit();
         } catch (Exception $e) {
             echo "Erreur lors de la validation : " . $e->getMessage();
@@ -139,17 +135,17 @@ try {
     }
 }
 
-public function delete($id)
+public function deleteAvis()
 {
     $connexion=$this->getmongodb();
-    $bdd = $connexion->zooarcadia;
-    $collection = $bdd->avis;
+    $collection = $connexion->selectCollection('avis');
+
     if (isset($_POST['sup_avis'])) {
         try {
             $idAvis = new ObjectId($_POST['sup_avis']);
             $collection->deleteOne(['_id' => $idAvis]);
             echo "Avis supprimé avec succès.";
-            header("Location: /admin/pages/avis.php");
+            header("Location:/zoo/public/index.php?page=avis");
             exit();
         } catch (Exception $e) {
             echo "Erreur lors de la suppression : " . $e->getMessage();
