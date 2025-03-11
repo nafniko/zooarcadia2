@@ -1,4 +1,8 @@
-        <div class="col-lg-5 col-sm-12 mb-4">
+<div class="w-100 d-flex justify-content-center align-items-center ">
+    <h1 class="text-white">Les Articles</h1>
+    
+</div>
+ <div class="col-12 col-md-6 col-lg-5 mb-4">
             <div class=" table-responsive container block-contain rounded-4 tab_fix overflow-auto">
                 <h2 class="text-white">Listes des articles</h2>
                 <table class="table">
@@ -56,17 +60,9 @@
         </div>
 
 
-        <div class="col-lg-5 col-sm-12">
-            <div class=" container block-contain rounded-4">
+        <div class="col-12 col-md-6 col-lg-5 ">
+            <div class=" container block-contain rounded-4 p-3">
                 <form action="" method="post" enctype="multipart/form-data" class=" text-white">
-                    <div class="mb-3 pt-3">
-                        <label for="page" class="form-label">ajouter </label>
-                        <select class="form-select" name="page" id="page">
-                            <option selected>choisir la page </option>
-                            <option value="Article">Article </option>
-                            <option value="Service">Service </option>
-                        </select>
-                    </div>
                     <div class="mb-3">
                         <label for="titre" class="form-label">titre</label>
                         <input type="text" class="form-control" id="titre" name="titre"
@@ -76,7 +72,7 @@
                         <label for="descriptions" class="form-label">contenu</label>
                         <textarea class="form-control" id="descriptions" name="descriptions"
                             placeholder="Rediger l'article !" rows="3" required></textarea>
-                        <div class="mb-3">
+                        <div class="mb-3 pt-3">
                             <label for="image" class="form-label">Default file input example</label>
                             <input class="form-control" type="file" id="image" name="image" required>
                         </div>
@@ -96,3 +92,5 @@
                 </form>
             </div>
         </div>
+       
+        

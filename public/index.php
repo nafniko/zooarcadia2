@@ -3,6 +3,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../src/utils/route.php';
 
 use Utils\SessionManager;
+use Models\Roles;
 
 $session = new SessionManager();
 $session->start();
@@ -14,6 +15,8 @@ $currentpage = basename($_SERVER['SCRIPT_NAME']);
 
 $page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_SPECIAL_CHARS) ?? 'index';
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT, ['options' => ['default' => null]]);
+$role =new Roles();
+$role->permission($page);
 
 $vueHeader = $routes[$page]['vue']?? 'user';
 if ($session->get('user') === null && $vueHeader == 'admin'||$vueHeader == 'logout') {
@@ -40,6 +43,7 @@ if (array_key_exists($page, $routes)) {
     // var_dump($controllerName);
     // var_dump($actionName);
     // var_dump($routes[$page]['js']);
+    // var_dump($_SESSION);
 
 
     // Instancier le contrôleur et appeler l'action

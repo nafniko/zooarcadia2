@@ -145,7 +145,7 @@ class Animal extends Models
     {
             $this->getBdd();
             $var = [];
-            $stmt = $this->pdo->prepare("SELECT *FROM animaux LEFT JOIN avis_veto ON animaux.id = avis_veto.animal_id LEFT JOIN images ON animaux.images = images.id_img;");
+            $stmt = $this->pdo->prepare("SELECT animaux.id,animaux.prenom,animaux.race,animaux.habitat,animaux.images,avis_veto.commentaire,images.chemin FROM animaux LEFT JOIN avis_veto ON animaux.id = avis_veto.animal_id LEFT JOIN images ON animaux.images = images.id_img;");
             $stmt->execute();
             while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $var[] = new Animal($data);

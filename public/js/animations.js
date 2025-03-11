@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const details = card.querySelector('.details');
             details.classList.toggle('visually-hidden-focusable');
             const animalId = card.getAttribute('data-animal-id');
+            console.log(`ID de l'animal : ${animalId}`);
             
             fetch('public/index.php?page=stat', {
                 method: 'POST',

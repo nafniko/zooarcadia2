@@ -3,7 +3,7 @@
     foreach ($animaux as $getAnimals) {
     ?>
         <div class="d-flex justify-content-center align-items-center  flex-column ">
-            <div data-animal-id="<?= htmlentities($getAnimals->getId()) ?>" class="card mycard m-4 text-center rounded-4">
+            <div data-animal-id="<?= htmlentities($getAnimals->getId()) ?>" class="card mycard m-1 text-center rounded-4">
                 <img src="/zoo/public<?= htmlentities($getAnimals->getChemin()) ?>" class="  imgcontents rounded-4 img-fluid "
                     alt="<?= htmlentities($getAnimals->getPrenom()) ?>">
                 <h3 class="mt-3"><?= htmlentities($getAnimals->getPrenom()) ?></h3>

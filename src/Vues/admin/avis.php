@@ -3,7 +3,7 @@
     <h1 class=" text-white mt-4  ">Les Avis</h1>
     <div class="row">
         <div class="col-12 d-flex flex-wrap block-contain justify-content-center  rounded-4 p-3">
-            <?php 
+            <?php
     
     foreach($objetList as $Avis){
 ?>

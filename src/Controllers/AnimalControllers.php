@@ -5,7 +5,6 @@ namespace Controllers;
 use Models\Animal;
 use Models\Habitat;
 use Models\Image;
-use Models\Stat;
 
 class AnimalControllers
 {

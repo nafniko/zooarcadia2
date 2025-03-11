@@ -2,7 +2,7 @@
     <h1 class="text-white">Les Services</h1>
     
 </div>
-<div class="col-lg-5 col-sm-12 mb-4 ">
+<div class="col-12 col-md-6 col-lg-5 mb-4 ">
     <div class=" table-responsive container block-contain rounded-4 tab_fix overflow-auto">
         <h2 class="text-white">Listes des Services</h2>
         <table class="table">
@@ -60,7 +60,7 @@
     </div>
 </div>
 
-<div class="col-lg-5 col-sm-12 h-100 ">
+<div class="col-12 col-md-6 col-lg-5 ">
     <div class=" container block-contain rounded-4 p-3">
         <form action="" method="post" enctype="multipart/form-data" class=" text-white">
            

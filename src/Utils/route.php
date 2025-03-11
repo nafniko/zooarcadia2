@@ -182,7 +182,9 @@ $routes = [
         "controller" => "ContentControllers",
         "path"=> "/zoo/public/index.php?page=content",
         "action" => "admin",
-        "vue"=> "admin"
+        "vue"=> "admin",
+        "js"=> "modifier.js"
+
     ],
     "logout" => [
         "controller" => "AuthController",

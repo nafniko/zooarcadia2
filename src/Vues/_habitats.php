@@ -4,7 +4,7 @@
     <div class="block-contain container rounded-4 mb-3">
         <div class="d-flex justify-content-center">
 
-            <div class="row d-flex justify-content-center">
+            <div class="row d-flex justify-content-center pt-3">
                 <?php foreach ($habitats as $habitat): ?>
                 <div class="col-lg-3 col-sm-12 col-md-6 mb-4">
                     <a href="/zoo/public/index.php?page=habitat&id=<?= htmlentities($habitat->getId()) ?>
