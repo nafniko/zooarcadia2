@@ -5,11 +5,11 @@
             <?php foreach ($objetList as $value) { ?>
                 <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3 d-flex justify-content-center">
                     <img data-prenom="<?= htmlentities($value->getPrenom()) ?>"
-                         data-id="<?= htmlentities($value->getId()) ?>"
-                         src="/zoo/public<?= htmlentities($value->getChemin()) ?>"
-                         class="card-img-top rounded-4 img-fluid"
-                         alt=""
-                         style="width: 100%; height: 200px; object-fit: cover;">
+                        data-id="<?= htmlentities($value->getId()) ?>"
+                        src="/zoo/public<?= htmlentities($value->getChemin()) ?>"
+                        class="card-img-top rounded-4 img-fluid"
+                        alt="les animaux du zoo"
+                        style="width: 100%; height: 200px; object-fit: cover;">
                 </div>
             <?php } ?>
         </div>
@@ -21,7 +21,6 @@
         <div class="col-lg-6 col-md-8 col-sm-10 col-12">
             <h2 class="text-white pt-4">Ajouter un animal</h2>
             <div class="block-contain rounded-4 p-4">
-
                 <form method="post" enctype="multipart/form-data" class="text-white">
                     <div class="mb-3">
                         <label for="image" class="form-label">Image</label>

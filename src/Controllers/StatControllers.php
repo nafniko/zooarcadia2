@@ -17,7 +17,6 @@ class StatControllers
     public function admin()
     {
         $method = $_SERVER["REQUEST_METHOD"];
-        $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT, ['options' => ['default' => null]]);
 
         switch ($method) {
             case 'GET':
@@ -38,9 +37,19 @@ class StatControllers
     }
     public function count()
     {
-        $stat = new Stat();
-        $stat->incrementCount();
-        exit;
+        $data = json_decode(file_get_contents("php://input"), true);
+
+        if (isset($data['animalId'])) {
+            $animalId = filter_var($data['animalId'], FILTER_SANITIZE_NUMBER_INT);
+            if ($animalId) {
+                $stat = new Stat();
+                $stat->incrementCount($animalId);
+            } else {
+                echo json_encode(['message' => 'Erreur : Identifiant d\'animal invalide.']);
+            }
+        } else {
+            echo json_encode(['message' => 'Erreur : Aucun identifiant d\'animal fourni.']);
+        }
     }
     public function show()
     {
@@ -55,7 +64,6 @@ class StatControllers
         }
         $objet = new $className();
         $objetList = $objet->getAllObjet();
-        // var_dump($objetList);
 
         require_once __DIR__ . '/../Vues/admin/'. $pages.'.php';
     }

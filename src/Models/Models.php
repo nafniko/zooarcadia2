@@ -216,7 +216,7 @@ abstract class Models
         $query = $this->bdd->animaux->insertOne(
             [
                 'animal_id' => $id,
-                'prenom' => $_POST['prenom'],
+                'prenom' => htmlentities($_POST['prenom']),
                 'image_path' => $imagePath,
                 'counter' => 0,
             ]

@@ -11,44 +11,6 @@ class SessionManager
         }
     }
 
-    public static function authRoles($page)
-    {
-        switch ($_SESSION['roles']) {
-            case '1':
-                if($page !== 'rapport'|| $page !== 'repas' ){
-                    header('Location: /erreur.php?error=erreur');
-                    exit();
-                }
-                break;
-            case '2':
-                return true;
-                break;
-            case '3':
-                return true;
-                break;
-            default:
-                return false;
-        }
-
-        switch($_SESSION['roles']){
-            case 1 : // role veterinaire
-              if($_SERVER['SCRIPT_NAME'] !== '/admin/index.php' && $_SERVER['SCRIPT_NAME'] !== '/admin/pages/rapport.php'){
-                header('Location: /erreur.php?error=erreur');
-                  exit();
-              };
-              break;
-              case 2 : // role employé
-                  if($_SERVER['SCRIPT_NAME'] === '/admin/pages/employee.php.php'&& $_SERVER['SCRIPT_NAME'] === '/admin/pages/rapport.php'){
-                    header('Location: /erreur.php?error=erreur');
-    
-                      exit();
-                  };
-                  break;
-                  case 3 : //role admin
-                      break;
-          }
-    }
-
     public static function set($key, $value)
     {
         $_SESSION[$key] = $value;
